@@ -70,7 +70,6 @@ a {
     justify-content: center;
     align-items: center;
     z-index: 100000;
-    background-color: black;
     min-height: 100vh;
     position: fixed;
     top: 0;
@@ -525,11 +524,10 @@ label:active {
 
     #preview {
         width: 100%;
-        background-color: black;
+
     }
 
     .prev {
-        background-color: red;
         margin: auto;
         width: 100%;
     }
@@ -699,11 +697,10 @@ label:active {
 
     #preview {
         width: 100%;
-        background-color: black;
+
     }
 
     .prev {
-        background-color: red;
         margin: auto;
         width: 100%;
     }
@@ -861,11 +858,10 @@ label:active {
 
     #preview {
         width: 100%;
-        background-color: black;
+
     }
 
     .prev {
-        background-color: red;
         margin: auto;
         width: 100%;
     }

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skinovation</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="icon" href="images/gp logo (2).png" type="image/png">
+</head>
+
+<body>
+    <section id="home" class="pt-5 d-flex align-items-center justify-content-center overflow-hidden">
+        <div class="overlay">
+            <img src="images/gp logo.png" width="400px" alt="">
+            <i class="text-white fa-solid fa-spinner fs-1 fa-spin"></i>
+        </div>
+        <nav data-wow-delay="0.45s" class="navbar fadeInDown wow  navbar-expand-lg bg-transparent fixed-top">
+            <div class="container">
+                <img class="navbar-brand p-0" src="images/gp logo.png" alt="logo" width="150px">
+                <button onclick="Toggle()" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse nev" id="navbarSupportedContent">
+                    <ul class="navbar-nav position-relative gap-3  m-auto ps-5">
+                        <li class="nav-item ps-3">
+                            <a class="nav-link navActive" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#test">test</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#about">about</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#contact">contact</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto ic">
+                        <li class="nav-item icon navhover">
+                            <i class="fa-solid fa-search"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container mt-4 ">
+            <div class="row ">
+                <div data-wow-delay="0.45s" class="col-lg-6 d-flex justify-content-center align-items-center wow  fadeInLeft">
+                    <div class="mainHeading">
+                        <h1 class="pb-3">Discover</br>your skin disease<br>with us!</h1>
+                        <a href="#test" class="text-decoration-none startbtn px-5 py-2 ">Lets start <span><i
+                                    class="test fa-solid fa-arrow-right"></i></span></a>
+                    </div>
+                </div>
+                <div data-wow-delay="0.45s" class="col-lg-6 d-flex justify-content-center align-items-end wow fadeInRight">
+                    
+                        <img src="images/homeimg.png" alt="" width="100%">
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section id="test">
+        <div class="container py-5 ">
+            <h3 class="fs-1 text-white">Test</h3>
+            <p class="fs-4 text-white">fill your disease form</p>
+            <div class="rounded-1 upload shadow-lg bg-white p-5 d-flex flex-column align-items-center gap-4">
+                <div class="position-relative p-2">
+                    <div class="Rounded overflow-hidden">
+                        <img src="images/istockphoto-1147544807-612x612.jpg" class="bg-body-tertiary" id="preview"
+                            width="300px" alt="">
+                    </div>
+                    <div id="clear" class="hidden">
+                        <i onclick="remove()" class="position-absolute fa-solid fa-x fs-5"></i>
+                    </div>
+                </div>
+                <div class="w-50">
+                    <p class="m-0 fs-5 fw-bold">upload image</p>
+                    <p class="m-0 p-0 pb-1 text-muted">(accepted formats are png, jpeg and TIFF)</p>
+                    <div class="upload shadow-sm rounded-1 py-2 px-3 d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center gap-1">
+                            <label id="imgbtn" for="image">Choose file</label>
+                            <p id="input" class="m-0 p-0">No file chosen</p>
+                        </div>
+                        <i class="fa-solid fa-camera fs-5"></i>
+                    </div>
+                </div>
+                <input class="d-none" type="file" name="image" id="image" accept=".png,.jpeg">
+                <button class="shadow-sm submit">Submit</button>
+            </div>
+        </div>
+    </section> -->
+    <section class="position-relative pt-5" id="test">
+        <div id="capture" class="hidden position-fixed top-0 bottom-0 end-0 start-0 d-flex justify-content-center align-items-center">
+            <div id="vid" class=" position-relative">
+                <div class="overflow-hidden w-100">
+                    <video id="video" autoplay></video>
+                    <button id="capture-btn"></button>
+                </div>
+                <i class="exit fa-solid fa-x" onclick="exit2()"></i>
+            </div>
+            <canvas id="canvas"  style="display:none;"></canvas>
+        </div>
+        <div id="carouselExample" class="carousel slide wow fadeInUp" data-wow-delay="0.3s">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container w-75 m-auto py-3">
+                        <h3 class="text-center  text-white m-0 pb-0">Test</h3>
+                        <p class="text-center fs-4 text-white">fill your disease form</p>
+                        <div
+                            class="rounded-4 upload shadow-sm bg-white p-4 d-flex flex-column align-items-center gap-3">
+                            <div class="testimg position-relative pt-2 pe-2">
+                                <div class="prev Rounded overflow-hidden">
+                                    <img src="images/istockphoto-1147544807-612x612.jpg" class="bg-body-tertiary"
+                                        id="preview" alt="">
+                                </div>
+                                <div id="clear" class="hidden">
+                                    <i onclick="remove()" class="position-absolute fa-solid fa-trash fs-5"></i>
+                                </div>
+                            </div>
+                            <div class="uploadSection">
+                                <p class="m-0 uploadP fw-bold">upload image</p>
+                                <p class="m-0 uploadP2 p-0 pb-1 text-muted">(accepted formats are png, jpeg and TIFF)</p>
+                                <div
+                                    class="upload shadow-sm rounded-1 py-2 px-3 d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center gap-1">
+                                        <label for="image" id="imgbtn" class="d-flex justify-content-center align-items-center">
+                                            <i class="pe-1 fa-solid fa-upload"></i>
+                                            <p class="m-0 p-0">Choose file</p>
+                                        </label>
+                                        <p id="input" class="m-0 p-0">No file chosen</p>
+                                    </div>
+                                    <i onclick="webcam()" class="fa-solid fa-camera fs-5"></i>
+                                </div>
+                            </div>
+                            <p  class="text-danger text-center hidden fw-bold p-0 m-0" id="camError">Error accessing the webcam: Permission denied!</p>
+                            <input class="d-none" type="file" name="image" id="image" accept=".png,.jpeg,.tif,.tiff">
+                            <button onclick="Test('result')" id="submit" class="shadow-sm Disable submit" disabled>Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="container w-75 m-auto">
+                        <h3 class="text-center pb-3  text-white">Result</h3>
+                        <div class="rounded-4 shadow-lg bg-white d-flex justify-content-center align-items-center flex-column p-5">
+                            <div class="row align-items-center py-4">
+                                <div class="col-md-3 col-sm-4">
+                                    <div id="disease">
+                                        <img src="images/man.png" alt="" width="100%">
+                                    </div>
+                                </div>
+                                <div class="col-md-9 co-sm-8">
+                                    <h2>Tinia</h2>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus magni sint
+                                        nemo sapiente perspiciatis expedita beatae, nesciunt quia totam dolores.</p>
+                                    <h2 id="sym">symptoms</h2>
+                                    <p id="symptoms">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, repellendus
+                                        numquam quae libero mollitia quasi architecto animi iure tempore id.</p>
+                                </div>
+                            </div>
+                            <button onclick="Test('Check')" class="shadow-sm submit">Test again</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button id="Check" class="d-none carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                data-bs-slide="prev">
+            </button>
+            <button id="result" class="d-none carousel-control-next" type="button" data-bs-target="#carouselExample"
+                data-bs-slide="next">
+            </button>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container p-5 ">
+            <h3 class="  m-0 pb-0">About us</h3>
+            <p class="text-muted abt">We are passionate team of experts committed to making skin diagnosis accessible to
+                everyone.  with our advanced image analysis technology,we bring clarity to your skin concerns
+            </p>
+            <h4 class="pb-1 mt-5 position-relative">Diseases we cover</h4>
+            <div class="row flex-row justify-content-evenly ">
+                <div class="col-md-2 shadow-sm col-6 col-sm-6 overflow-hidden">
+                    <div class="wow fadeInUp" data-wow-delay="0.1s">
+                        <img class=" w-100" src="images/man.png" alt="">
+                        <p class="desc py-3 m-0 text-center fs-5 fw-bold">Tinia capities</p>
+                    </div>
+                </div>
+                <div class="col-md-2 shadow-sm col-6 col-sm-6 overflow-hidden">
+                    <div class="wow fadeInUp" data-wow-delay="0.2s">
+                        <img class=" w-100" src="images/nail.png" alt="">
+                        <p class="desc py-3 m-0 text-center fs-5 fw-bold">Onychomycosis</p>
+                    </div>
+                </div>
+                <div class="col-md-2 shadow-sm col-6 col-sm-6 overflow-hidden">
+                    <div class="wow fadeInUp" data-wow-delay="0.3s">
+                        <img class=" w-100" src="images/hand.png" alt="">
+                        <p class="desc py-3 m-0 text-center fs-5 fw-bold">Lichen planus</p>
+                    </div>
+                </div>
+                <div class="col-md-2 shadow-sm col-6 col-sm-6 overflow-hidden">
+                    <div class="wow fadeInUp" data-wow-delay="0.4s">
+                        <img class=" w-100" src="images/skin.png" alt="">
+                        <p class="desc py-3 m-0 text-center fs-5 fw-bold">Atopic dermatitis</p>
+                    </div>
+                </div>
+                <div class="col-md-2 shadow-sm col-6 col-sm-6 overflow-hidden">
+                    <div class="wow fadeInUp" data-wow-delay="0.5s">
+                        <img class="w-100 " src="images/face.png" alt="">
+                        <p class="desc py-3 m-0 text-center fs-5 fw-bold">Acne vulgaris</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a id="upBtn" href="#home" class="shadow-sm text-decoration-none "><i class="fa-solid fa-fw fa-arrow-up"></i></a>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <script src="code.js"></script>
+</body>
+
+</html>

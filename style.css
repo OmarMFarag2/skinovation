@@ -65,6 +65,7 @@ a {
 }
 
 .overlay {
+    background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -976,7 +977,7 @@ label:active {
 
     /* Styles for large screens */
     h1 {
-        font-size: 80px;
+        font-size: 70px;
     }
 
     .row img {

@@ -1013,7 +1013,7 @@ label:active {
     }
 
     #test {
-        padding: 0px !important;
+        padding: 10px !important;
     }
     #vid{
         width: 50%;

@@ -119,6 +119,8 @@ document.getElementById('capture-btn').addEventListener('click', function () {
   var video = document.getElementById('video');
   var canvas = document.getElementById('canvas');
   var context = canvas.getContext('2d');
+  canvas.width=Number($("#video").css("width").replace("px",""))
+  canvas.height=Number($("#video").css("height").replace("px",""))
   context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
   // Get the data URL representing the current frame

@@ -79,7 +79,7 @@ $(window).scroll(function () {
   //   }
   // }
   let navOffset = Number($("nav").css("top").replace("px", ""))
-  let navHeight = Number($("nav").css("height").replace("px", ""))+5
+  let navHeight = Number($("nav").css("height").replace("px", "")) + 5
   navHeight *= -1
   if ((navOffset <= 0 || navOffset >= navHeight) && navflag) {
     if (count > 0) {
@@ -127,8 +127,11 @@ document.getElementById('capture-btn').addEventListener('click', function () {
   Name.innerHTML = "captured_img";
   clear.classList.remove("hidden")
   preview.classList.add("Rounded")
-  cam.classList.add("hidden")
   document.body.style.overflow = "visible"
+  $("#submit").removeClass("Disable")
+  $("#submit").removeAttr("disabled")
+  closeCamera()
+  cam.classList.add("hidden")
 });
 function webcam() {
   navigator.mediaDevices.getUserMedia({ video: true })
@@ -142,15 +145,23 @@ function webcam() {
     })
     .catch(function (err) {
       $("#camError").removeClass("hidden");
-      $("#test").addClas
     });
+
   // $("#capture").html(`            <div class="position-relative">
   // <video id="video" width="640" height="480" autoplay></video>
   // <button id="capture-btn"></button>
   // </div>
   // <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>`)
 }
+function closeCamera() {
+  var stream = video.srcObject;
+  var tracks = stream.getTracks();
+  tracks.forEach(function (track) {
+    track.stop();
+  });
+}
 function exit2() {
+  closeCamera()
   cam.classList.add("hidden")
   document.body.style.overflow = "visible"
 }

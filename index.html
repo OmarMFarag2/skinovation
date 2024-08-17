@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skinovation</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="icon" href="images/gp logo (2).png" type="image/png">
+</head>
+
+<body>
+    <div class="overlay min-vh-100 min-vw-100">
+        <img src="images/gp logo.png" class="position-relative" width="400px" alt="">
+        <div class="spin">
+            <i class="text-white fa-solid fa-spinner fs-1 fa-spin"></i>
+        </div>
+    </div>
+    <div id="log" class="min-vh-100 overflow-hidden">
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="text-white toast-body d-flex justify-content-between align-items-center px-3">
+                    <p class="fs-6 m-0 p-0">account created successfully!</p>
+                    <div><i onclick="hideToast()" class="fa-solid fa-x text-white"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="row min-vw-100 min-vh-100 position-relative">
+            <div class="col-sm-6  px-5 side position-relative d-flex align-items-center">
+                <h2 class="wow fadeInLeft" data-wow-delay="0.1s">Welcome<br>back!</h2>
+            </div>
+            <div id="right" class="col-sm-6 p-5 align-items-center d-flex justify-content-center position-relative ">
+                <div class="container ">
+                    <div class="mobile">
+                        <p class="log m-0 wow fadeInUp" data-wow-delay="0.1s">Login</p>
+                        <p class="text-muted welcome pb-4  wow fadeInUp" data-wow-delay="0.1s">please login to your
+                            account.</p>
+                    </div>
+                    <div class="mobile2nd">
+                        <div
+                            class="input-group has-validation justify-content-center align-items-center flex-column gap-4">
+                            <div class="w-100  wow fadeInUp" data-wow-delay="0.1s">
+                                <label class="m-0 hidden text-muted ps-1 pb-1 fs-5">Email</label>
+               
+
+                                    <input  onkeyup="validateEmail(id)" onclick="reset(this,'#isValidMail')" type="text"
+                                    class="shadow-sm py-3 fs-5 form-control rounded-2 " placeholder="Email" id="email" required>
+                             
+                                <p id="isValidMail" class="text-center text-danger fw-medium pt-1 m-0"></p>
+                            </div>
+                            <div class=" w-100 wow fadeInUp" data-wow-delay="0.2s">
+                                <label class="m-0 hidden text-muted ps-1 pb-1 fs-5">Password</label>
+                                <div class="position-relative">
+
+                                    <i onclick="toggleEye('password')" class="fa-solid text-muted hidden fa-eye"></i>
+                                    <i onclick="toggleEye('password')" class="fa-solid text-muted fa-eye-slash"></i>
+                                    <input onkeyup="validatePassword(id)" onclick="reset(this,'#isValidPassword')" type="password"
+                                    class=" shadow-sm form-control fs-5 py-3 rounded-2" placeholder="password" id="password" required>
+                                </div>
+                                <p id="isValidPassword" class="text-center text-danger fw-medium p-1 m-0">
+                                   </p>
+                            </div>
+                            <div class="d-flex wow fadeInUp w-100 justify-content-between
+                                align-items-center"data-wow-delay="0.3s">
+                                <div onclick="setRememberFlag()"
+                                    class="d-flex gap-1 justify-content-center align-items-center">
+                                    <div class=" checkbox"></div>
+                                    <p class="m-0 fs-6 fw-medium">Remember Me</p>
+                                </div>
+                            </div>
+
+                            <button onclick="login()" data-wow-delay="0.3s"
+                                class="login-btn wow rounded-pill fadeInUp fs-4 w-100 rounded-3 fw-bold">
+                                <span id="sub">Login</span>
+                                <span class="d-none d-flex justify-content-center fs-5 align-items-center"
+                                    id="loader"><i class="fa-solid fs-3 p-0 m-0 fa-circle-notch fa-spin"></i></span>
+                            </button>
+                        </div>
+                        <p data-wow-delay="0.3s" class="fs-5 wow fadeInUp text-muted m-0 pt-3">new user?<span
+                                onclick="logSign('#sign','#log')" class="sign ps-1">signup</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sign" class="min-vh-100 overflow-hidden d-none">
+        <div class="row min-vh-100 min-vw-100">
+            <div class="col-sm-6 px-5 side d-flex align-items-center">
+                <h2 class="wow fadeInLeft">Welcome to <br>skin<span class="color">O</span>vation!</h2>
+            </div>
+            <div class="col-sm-6 d-flex px-5 align-items-center justify-content-center">
+                <div class="container">
+                    <div class="mobile">
+
+                        <p class="log m-0 wow fadeInUp" data-wow-delay="0.1s">Signup</p>
+                        <p class="text-muted welcome  wow fadeInUp pb-4" data-wow-delay="0.1s">Welcome! create your account
+                            to start</p>
+                        </div>
+                        <div class="mobile2nd">
+
+                            <div class="input-group has-validation justify-content-center align-items-center flex-column gap-4">
+                                <div class="w-100  wow fadeInUp" data-wow-delay="0.2s">
+                                    <input onkeyup="validateUsername('new_username')" onclick="reset(this,'#isValidUser')" type="text"
+                                    class=" shadow-sm  py-3 fs-5 form-control rounded-2 " placeholder="username" id="new_username" required>
+                                    <p id="isValidUser" class="text-center text-danger fw-medium pt-1 m-0"></p>
+                            </div>
+                            <div class="w-100  wow fadeInUp" data-wow-delay="0.3s">
+                                <input onkeyup="validateEmail('new_email')" onclick="reset(this,'#isValidMail2')" type="email"
+                                class=" shadow-sm  py-3 fs-5 form-control rounded-2 " placeholder="Email" id="new_email" required>
+                                <p id="isValidMail2" class="text-center text-danger fw-medium pt-1 m-0"></p>
+                        </div>
+                        <div class=" w-100  wow fadeInUp" data-wow-delay="0.4s">
+                             <div class="position-relative">
+                                <i onclick="toggleEye('new_password')" class="fa-solid text-muted hidden fa-eye"></i>
+                                <i onclick="toggleEye('new_password')" class="fa-solid text-muted fa-eye-slash"></i>
+                                 <input onkeyup="validatePassword('new_password')" onclick="reset(this,'#isValidPassword2')" placeholder="Password" type="password"
+                                 class=" shadow-sm form-control fs-5 py-3 rounded-2" id="new_password" required>
+                                </div>
+                                 <p id="isValidPassword2" class="text-center  text-danger  fw-medium p-1 m-0">
+                                </p>
+                            </div>
+                            <button data-wow-delay="0.5s" onclick="signup()"
+                            class="login-btn rounded-pill wow fadeInUp fs-4 w-100 rounded-3 fw-bold">
+                            <span id="sub2">signup</span>
+                            <span class="d-none d-flex justify-content-center fs-5 align-items-center" id="loader2"><i
+                                class="fa-solid fs-3 p-0 m-0 fa-circle-notch fa-spin"></i></span>
+                            </button>
+                            <div class="w-100  wow fadeInUp" data-wow-delay="0.5s">
+                                
+                            <p class="fs-5 text-start text-muted  m-0 ">already have an account?<span
+                                    onclick="logSign('#log','#sign')" class="sign ps-1">Login</span></p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div id="mainContainer" class="d-none">
+        <div id="history" class="history hidden p-5">
+            <div class="box px-0 shadow-lg rounded-3 overflow-hidden position-relative pb-3">
+                <div id="noHist" class="w-100 hidden h-100 justify-content-center d-flex align-items-center">
+                    <p class="fs-1 text-muted fw-bold" id="histP">there is no history!</p>
+                    <span class=" justify-content-center fs-5 align-items-center" id="histSpinner"><i
+                            class="fa-solid fs-1 text-muted p-0 m-0 fa-spinner fa-spin"></i></span>
+                </div>
+                <div id="historySpinner" class="w-100 hidden h-100 justify-content-center d-flex align-items-center">
+                    <span class="justify-content-center fs-5 align-items-center"><i
+                            class="fa-solid fs-1 text-muted p-0 m-0 fa-spinner fa-spin"></i></span>
+                </div>
+                <div id="header" class="w-100 d-flex rounded-top-3 overflow-hidden shadow-sm">
+
+                    <div class="col-md-3 header d-flex justify-content-center align-items-center">
+                        <div>
+                            <p class="text-center">date</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 header d-flex justify-content-center align-items-center">
+                        <p class="text-center">result</p>
+                    </div>
+                    <div class="col-md-3 header d-flex justify-content-center align-items-center">
+                        <div>
+                            <p class="text-center">image</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 header d-flex justify-content-center align-items-center">
+                        <div>
+                            <p class="text-center">action</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pb-5 flex-wrap d-flex w-100 overflow-x-hidden overflow-y-scroll" id="items">
+                </div>
+            </div>
+        </div>
+        <section id="home" class="pt-5 d-flex align-items-center justify-content-center overflow-hidden">
+
+            <nav class="navbar fadeInDown wow  navbar-expand-lg bg-transparent justify-content-center d-flex fixed-top">
+                <div class="container d-flex justify-content-between">
+                    <img class="navbar-brand p-0" src="images/gp logo.png" alt="logo" width="150px">
+                    <button onclick="Toggle()" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse nev" id="navbarSupportedContent">
+                        <ul class="navbar-nav position-relative m-auto">
+                            <li class="nav-item">
+                                <a onclick="closeNav(),hideHistory()" class="nav-link navActive" aria-current="page"
+                                    href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a onclick="closeNav(),hideHistory()" class="nav-link " href="#test">test</a>
+                            </li>
+                            <li class="nav-item">
+                                <a onclick="closeNav(),hideHistory()" class="nav-link " href="#about">about</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="histBtn" onclick=toggleHistory(),closeNav()>History</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ps-0 d-flex justify-content-evenly gap-3 align-items-center">
+
+                            <li class="nav-item">
+                                <div
+                                    class="d-flex justify-content-center shadow-lg rounded-pill align-items-center logContainer ">
+                                    <p id="user" class="logout rounded-start-pill m-0"></p>
+                                    <p onclick="logout()"
+                                        class="logoutIcon rounded-end-pill d-flex justify-content-center align-items-center m-0">
+                                        <i title="logout" class="fa-solid fa-right-from-bracket"></i>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="container mt-4 ">
+                <div class="row ">
+                    <div class="col-lg-6 d-flex justify-content-center align-items-center wow  fadeInLeft">
+                        <div class="mainHeading">
+                            <h1 class="pb-3">Discover</br>your skin disease<br>with us!</h1>
+                            <a href="#test" class="text-decoration-none startbtn"><i
+                                        class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-center align-items-end wow fadeInRight">
+
+                        <img src="images/homeimg.png" alt="" width="100%">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="position-relative pb-5" id="test">
+            <div id="capture"
+                class="hidden position-fixed top-0 bottom-0 end-0 start-0 d-flex justify-content-center align-items-center">
+                <div id="vid" class=" position-relative">
+                    <div class="overflow-hidden w-100">
+                        <video id="video" autoplay></video>
+                        <button id="capture-btn"></button>
+                    </div>
+                    <i class="exit fa-solid fa-x" onclick="exit2()"></i>
+                </div>
+                <canvas id="canvas" style="display:none;"></canvas>
+            </div>
+            <div id="carouselExample" data-bs-touch="false" class="carousel slide wow fadeInUp" data-wow-delay="0.3s">
+                <div class="carousel-inner">
+                    <div class="carousel-item active w-100  ">
+                        <div class="container test w-75 m-auto ">
+                            <h3 class="text-center  text-white m-0 pb-0">Test</h3>
+                            <p class="text-center fs-4 text-white">fill your disease form</p>
+                            <div
+                                class="rounded-4 upload shadow-sm bg-white p-4 d-flex flex-column align-items-center gap-3">
+                                <div class="testimg position-relative pt-2 pe-2">
+                                    <div class="prev Rounded overflow-hidden">
+                                        <img src="images/istockphoto-1147544807-612x612.jpg" class="bg-body-tertiary"
+                                            id="preview" alt="">
+                                    </div>
+                                    <div id="clear" class="hidden">
+                                        <i onclick="remove()" class="position-absolute fa-solid fa-trash fs-5"></i>
+                                    </div>
+                                </div>
+                                <div class="uploadSection">
+                                    <p class="m-0 uploadP fw-bold">upload image</p>
+                                    <p class="m-0 uploadP2 p-0 pb-1 text-muted">(accepted formats are png, jpeg and
+                                        TIFF)</p>
+                                    <div
+                                        class="upload shadow-sm rounded-1 py-2 px-3 d-flex justify-content-between align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center gap-1">
+                                            <label for="image" id="imgbtn"
+                                                class="d-flex justify-content-center align-items-center">
+                                                <i class="pe-1 fa-solid fa-upload"></i>
+                                                <p class="m-0 p-0">Choose file</p>
+                                            </label>
+                                            <p id="input" class="m-0 p-0">No file chosen</p>
+                                        </div>
+                                        <i onclick="webcam()" class="fa-solid fa-camera fs-5"></i>
+                                    </div>
+                                </div>
+                                <p class="text-danger text-center hidden fw-bold p-0 m-0" id="camError">Error accessing
+                                    the webcam: Permission denied!</p>
+                                <input class="d-none" type="file" name="image" id="image"
+                                    accept=".png,.jpeg,.tif,.tiff,.jpg">
+                                    <div onclick="setHistoryFlag()"
+                                    class="d-flex gap-1 justify-content-center align-items-center">
+                                    <div id="save" class=" checkbox2"></div>
+                                    <p class="m-0 fs-5 fw-medium">Save result to history</p>
+                                </div>
+
+                                <button onclick="uploadImage()" id="submit" class="shadow-sm Disable submit" disabled>
+                                    <span id="sub3">Submit</span>
+                                    <span class="d-none d-flex justify-content-center fs-5 align-items-center"
+                                        id="loader3"><i
+                                            class="fa-solid fs-3 p-0 m-0 fa-circle-notch fa-spin"></i></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="container result py-3 m-auto">
+                            <h3 class="text-center pb-3 text-white">Result</h3>
+                            <div
+                                class="rounded-4 res shadow-sm bg-white d-flex justify-content-center align-items-center flex-column p-5">
+                                <div class="row align-items-center py-4">
+                                    <div class="col-md-3 col-sm-4">
+                                        <div id="disease">
+                                            <img src="images/man.png" alt="" width="100%">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 co-sm-8" id="diagnosis">
+                                    </div>
+                                </div>
+                                <button onclick="slide('Check')" class="shadow-sm submit">Test again</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button id="Check" class="d-none carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                </button>
+                <button id="result" class="d-none carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                </button>
+            </div>
+        </section>
+       
+        <section id="about">
+            <div class="container p-5 ">
+                <h3 class="  m-0 pb-0">About us</h3>
+                <p class="text-muted abt">We are passionate team of experts committed to making skin diagnosis
+                    accessible to
+                    everyone. with our advanced image analysis technology,we bring clarity to your skin concerns
+                </p>
+                <h4 class="pb-1 mt-5 position-relative">Diseases we cover</h4>
+                <div class="d-flex flex-wrap gap-2 justify-content-evenly ">
+                    <div class="col-md-2  my-2 shadow-sm col-5  overflow-hidden">
+                        <div class="wow fadeInUp" data-wow-delay="0.1s">
+                            <img class=" w-100" src="images/man.png" alt="">
+                            <div class="diseases">
+                                <p class="desc py-3 m-0 text-center fs-5 fw-bold">Tinia capities</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2  my-2 shadow-sm col-5  overflow-hidden">
+                        <div class="wow fadeInUp" data-wow-delay="0.2s">
+                            <img class=" w-100" src="images/nail.png" alt="">
+                            <div class="diseases">
+                                <p class="desc py-3 m-0 text-center fs-5 fw-bold">Onychomycosis</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-2  my-2 shadow-sm col-5  overflow-hidden">
+                        <div class="wow fadeInUp" data-wow-delay="0.3s">
+                            <img class=" w-100" src="images/hand.png" alt="">
+                            <div class="diseases">
+
+                                <p class="desc py-3 m-0 text-center fs-5 fw-bold">Lichen planus</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2  my-2 shadow-sm col-5  overflow-hidden">
+                        <div class="wow fadeInUp" data-wow-delay="0.4s">
+                            <img class=" w-100" src="images/skin.png" alt="">
+                            <div class="diseases">
+
+                                <p class="desc py-3 m-0 text-center fs-5 fw-bold">Atopic dermatitis</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2  my-2 shadow-sm col-5  overflow-hidden">
+                        <div class="wow fadeInUp" data-wow-delay="0.5s">
+                            <img class="w-100 " src="images/face.png" alt="">
+                            <div class="diseases">
+                                <p class="desc py-3 m-0 text-center fs-5 fw-bold">Acne vulgaris</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <a id="upBtn" href="#home" class="text-decoration-none "><i
+                class="fa-solid shadow-lg fa-fw fa-arrow-up"></i></a>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="js/code.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1623 @@
+@font-face {
+    font-family: font;
+    src: url(css/constan.ttf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+.nav2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    justify-content: center;
+    z-index: 1000;
+    background-color: white;
+}
+.history img {
+    width: 100px !important;
+}
+
+#closeHist {
+    top: 0;
+    right: 0;
+}
+
+.history p {
+    margin: 0;
+    padding: 15px 0px;
+}
+
+#items {
+    max-height: 100%;
+}
+
+.history .col-md-3 {
+    border-bottom: 1px solid rgba(140, 140, 140, 0.363);
+    border-top: 1px solid rgba(140, 140, 140, 0.363);
+}
+
+.history .box {
+    width: 100%;
+}
+
+.noBorder {
+    border-bottom: none !important;
+}
+
+#history .col-md-3 {
+    width: 25% !important;
+}
+
+.history .box {
+    background-image: url(../images/Screenshot\ 2024-02-26\ 165735.png);
+    background-size: cover;
+    height: 550px ;
+}
+
+#header {
+    background-color: #785198;
+    color: white;
+}
+
+#items .fa-trash {
+    color: #dc3545;
+    background-color: transparent !important;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    scale: 1.4;
+}
+#items .fa-trash:active {
+    transform: scale(0.95);
+}
+
+#items .fa-trash:hover {
+    background-color: #dc3545 !important;
+    color: white !important;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.history {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.215);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grey {
+    background-color: rgb(230, 230, 230);
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a .nav-item a,
+button,
+input {
+    font-family: "Poppins", sans-serif !important;
+}
+
+.toast-body,
+.toast-body .fa-x {
+    background-color: rgb(152, 63, 152) !important;
+    border-radius: 10px;
+}
+
+.poppins-bold {
+    font-weight: 700;
+    font-style: normal;
+}
+
+.col-md-2 {
+    transition: transform .5s;
+}
+
+.col-md-2:hover {
+    transform: scale(1.03);
+
+}
+
+
+.logContainer {
+    transition: background-color 0.3s;
+    background-color: white;
+}
+
+
+.logoutIcon:hover {
+    cursor: pointer;
+
+    transform: translateX(2px);
+}
+
+.logoutIcon {
+    color: #dc3545;
+    padding-right: 5px;
+    padding-left: 5px;
+    transition: transform 0.3s;
+}
+
+.logout {
+    padding: 5px 0px;
+    padding-left: 15px;
+    padding-right: 10px;
+    background-color: #9162b7;
+    color: white;
+}
+
+.log {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.log+p {
+    font-size: 1.25rem;
+}
+
+.login-btn {
+    background-color: rgb(152, 63, 152);
+    height: 80px;
+    color: white;
+    border: none;
+}
+
+.fa-eye,.fa-eye-slash{
+    font-size: 19px;
+    position: absolute;
+    top: 50%;
+    right: 7%;
+    transform: translateY(-50%);
+}
+.fa-eye:hover,.fa-eye-slash:hover{
+    cursor: pointer;
+}
+
+.side h2 {
+    font-size: 70px;
+
+    font-weight: 800;
+    line-height: 100px;
+    margin-bottom: 80px;
+    margin-left: 50px;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 .25rem rgba(148, 77, 148, 0.262) !important;
+}
+
+.checkbox,.checkbox2 {
+
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    border: 1px solid rgb(152, 63, 152);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.checkbox:active,.checkbox2:active {
+    transform: scale(0.85);
+}
+
+.checkbox:hover,.checkbox2:hover,
+.checkbox+p,.checkbox2+p {
+    cursor: pointer;
+}
+
+.form-control {
+    border-color: #989393;
+}
+
+.welcome {
+    font-size: 25px;
+    font-weight: 400px;
+
+}
+input::placeholder{
+    color: #9F9F9F !important;
+
+}
+.text-muted {
+    color: #9F9F9F !important;
+}
+
+.color {
+    color: #9162b7 !important;
+}
+
+.side {
+    background-image: url(../images/BG.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#liveToast {
+    background-color: #9162b7 !important;
+}
+
+.line {
+    width: 2px;
+    height: 30px;
+    background: #9162b7;
+}
+
+.sign {
+    color: #9162b7;
+    transition: 0.1s;
+}
+
+.sign:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: rgb(153, 75, 153);
+}
+
+#login .submit {
+    width: 150px;
+    height: 60px;
+}
+
+.aligned {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay img {
+
+    opacity: 0;
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes marginBottomIncrease {
+    from {
+        margin-bottom: 30px;
+
+    }
+
+    to {
+        margin-bottom: 0;
+    }
+}
+
+.spin {
+    opacity: 0;
+    ;
+}
+
+.overlay img {
+    animation:
+        fadeIn 400ms ease-out forwards,
+        marginBottomIncrease 400ms ease-out forwards;
+}
+
+.spin {
+    animation: fadeIn 400ms ease-out forwards;
+}
+
+.overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+    background-color: black;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#about .col-md-2 {
+    background-color: #9162b7;
+
+    border-radius: 22px;
+    padding: 0px;
+    color: white !important;
+}
+
+.diseases {
+    background-color: #9162b7;
+}
+
+.Disable {
+    background-color: #6b4888 !important;
+
+}
+
+.Disable:hover {
+    cursor: not-allowed !important;
+}
+
+.col-md-2 img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.col-md-2 p {
+    color: white;
+}
+
+.title {
+    font-size: 70px;
+    font-weight: 600;
+}
+
+body {
+    overflow: hidden;
+}
+
+
+.secondary {
+    display: none !important;
+}
+
+.main-color {
+    color: #785198;
+}
+
+#home {
+    min-height: 100vh;
+    background-image: url(../images/Screenshot\ 2024-02-26\ 165735.png);
+    background-size: cover;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: all 0.3s;
+    border-radius: 50%;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: rgba(129, 87, 164, 0.685);
+    text-transform: capitalize;
+}
+
+.nav-link:focus,
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show,
+.nav-link:hover {
+    color: #9162b7;
+    font-weight: 700;
+    transform: scale(1.06);
+    cursor: pointer;
+}
+
+.navActive {
+    color: #9162b7;
+    font-weight: 700;
+    transform: scale(1.06);
+}
+
+.navhover:hover {
+    cursor: pointer;
+    background-color: rgb(216, 216, 216);
+}
+
+.startbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-color: transparent;
+    border-radius: 50%;
+    width: 120px !important;
+    height: 120px !important;
+    background-color: #9162b7;
+    transition: background-color 0.3s;
+    font-size: 40px;
+}
+
+.startbtn:hover {
+    background-color: #785198;
+    cursor: pointer;
+}
+
+.test {
+    transition: transform 0.2s;
+}
+
+.startbtn:hover :first-child {
+    transform: translateX(3px);
+}
+
+#test,
+#test2 {
+    background-color: #9162b7;
+    min-height: 100vh;
+}
+
+.upload {
+    background-color: rgb(231, 231, 231);
+}
+
+.fa-camera {
+    color: #9162b7;
+    background-color: transparent;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+#imgbtn {
+    color: white;
+    font-weight: 600;
+    background-color: #9162b7;
+    border-radius: 3px;
+    padding: 5px 30px;
+    transition: background-color 0.3s;
+}
+
+.fa-camera:hover {
+    background-color: #7a539b5c;
+    cursor: pointer;
+
+}
+
+#imgbtn:hover,
+.submit:hover,
+.fa-x:hover {
+    background-color: #785198;
+    cursor: pointer;
+    color: white;
+}
+
+#test .fa-trash:hover {
+    background-color: #dc3545;
+    cursor: pointer;
+
+}
+
+nav {
+    background-image: url(../images/Screenshot\ 2024-02-26\ 165735.png);
+    background-size: cover;
+}
+
+.submit {
+    border-color: transparent;
+    background-color: #9162b7;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 30px;
+    transition: all 0.3s;
+}
+
+.fa-x,
+.fa-trash {
+    color: white;
+    top: 0px;
+    right: 0px;
+    width: 15px;
+    height: 15px;
+    padding: 7px;
+    border-radius: 50%;
+    background-color: #9162b7;
+    transition: all 0.3s;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.Rounded {
+    border-radius: 20px;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    margin: -30px 0px;
+
+}
+
+#history ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    margin: 0px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: #9162b7;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #785198;
+}
+
+::selection {
+    background-color: #9162b7;
+    color: white;
+}
+
+#capture-btn {
+    background-color: white;
+    padding: 25px;
+    border-radius: 50%;
+    position: absolute;
+    border: 5px solid rgb(230, 230, 230);
+    bottom: 15px;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+#capture-btn:hover,
+label:hover,
+i:hover {
+    cursor: pointer;
+}
+
+#capture {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000000000;
+    background-color: rgba(0, 0, 0, 0.551);
+}
+
+.exit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    transform: translate(50%, -50%);
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.desc {
+    color: #565454;
+}
+
+#about {
+    background-image: url(../images/Screenshot\ 2024-02-26\ 165735.png);
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h4::before {
+    position: absolute;
+    content: "";
+    left: -20px;
+    top: 0;
+    transform: translateY(50%);
+    width: 15px;
+    height: 15px;
+    background-color: #9162b7;
+    border-radius: 2px;
+}
+
+#upBtn {
+
+    position: fixed;
+    z-index: 100000;
+    right: 0;
+    bottom: 0;
+    margin: 0px 30px -60px 0px;
+    border-radius: 50%;
+}
+
+#upBtn:hover .fa-arrow-up {
+    color: white;
+    background-color: #9162b7;
+}
+
+#upBtn .fa-arrow-up {
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    padding: 15px;
+    color: #9162b7;
+    border-radius: 50%;
+    font-size: 25px;
+    transition: all 0.3s;
+}
+
+#about img {
+    transition: all 0.5s;
+
+}
+
+.exit {
+    right: 8px;
+    top: 0;
+}
+
+#preview {
+    width: 250px;
+}
+
+
+
+button:active,
+a:active,
+.exit:active,
+.fa-solid:active,
+.fa-camera:active,
+label:active {
+    scale: 0.95;
+}
+
+.history .fa-x {
+    background-color: white !important;
+    transform: translate(40%, -40%);
+    color: black;
+    padding: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.history .fa-x:hover {
+    background-color: rgb(240, 240, 240) !important;
+}
+
+#vid {
+    width: 70%;
+}
+#log input,#sign input{
+    border-radius: 50rem !important;
+}
+#log label,#sign label{
+    padding-left:16px !important ;
+}
+
+#vid video {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+@media screen and (max-width: 575px) {
+
+    .toast-container{
+        top: -9px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+
+    }
+    .fa-eye,.fa-eye-slash{
+        right: 11%;
+    }
+    #history{
+        padding: 50px 10px !important;
+    }
+    .box{
+        height: 80% !important;
+    }
+    #diagnosis h2{
+        text-align: center;
+        padding: 10px;
+    }
+    .result .res{
+        padding: 30px 20px !important;
+    }
+    .nav2{
+    
+       background-color: white;
+    }
+    .mobileNav{
+        display: flex !important;
+    }
+    input::placeholder{
+        font-size:13px !important ;
+    }
+    #sign,
+    #log {
+        height: 100vh !important;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../images/BG2.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    #right,
+    #sign .side+div {
+        padding: 20px !important;
+    }
+
+    .checkbox+p {
+        font-size: 13px !important;
+    }
+
+    #log .text-muted,
+    #sign .text-muted {
+        font-size: 14px !important;
+    }
+
+    .login-btn {
+        padding: 10px !important;
+        height: 50px !important;
+        border-radius: 50rem !important;
+        font-size: 19px !important;
+    }
+
+    #log .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #isValidPassword,#isValidMail{
+        font-size: 13px !important;
+    }
+    .log {
+        font-size: 30px;
+    }
+
+    .log+p {
+        padding-bottom: 10px !important;
+    }
+
+    #sign p {
+        padding: 0px !important;
+    }
+
+    #sign .container,
+    #log .container {
+        background-color: rgb(152, 63, 152);
+        border-radius: 35px;
+        width: 100% !important;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    .mobile{
+        padding: 40px 30px 0px 30px;
+        text-align: start !important;
+        background-color: rgb(152, 63, 152);
+        color: white !important;
+    }
+    .mobile .log,.mobile .text-muted{
+        color: white ;
+        text-align: start;
+        padding: 0px !;
+    }
+    .mobile .text-muted{
+        color: rgb(239, 239, 239) !important;
+    }
+    .mobile2nd{
+        padding: 40px 30px 40px 30px;
+        background-color: white;
+        border-radius: 35px;
+
+    }
+    #log .side,
+    #sign .side {
+        display: none !important;
+    }
+
+    #log input,
+    #sign input {
+        padding: 10px 10px !important;
+        font-size: 15px !important;
+    }
+
+    .log,
+    .log+p {
+        text-align: center;
+    }
+
+    .log+p {
+        font-size: 17px;
+    }
+
+    .nav-item a {
+        text-align: center;
+        padding: 8px;
+    }
+
+    #items p,
+    i {
+        font-size: 11px !important;
+    }
+
+    #items img {
+        width: 100% !important;
+    }
+
+    .box {
+        margin-top: 20px;
+    }
+
+    .history .fa-x {
+        padding: 5px;
+    }
+    .history .fa-trash {
+        scale: 1.2 !important;
+    }
+
+
+    h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    #home {
+        padding-bottom: 20px;
+    }
+
+    #home .row {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .row img {
+        padding: 0px !important;
+        margin: 0px;
+        padding-top: 20px;
+        width: 80%;
+    }
+
+    .testimg {
+        width: 50%;
+    }
+
+    #test .container {
+        width: 90% !important;
+    }
+
+    #test #disease {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #test .col-md-3 img {
+        width: 50% !important;
+    }
+
+    #symptoms,
+    #sym {
+        display: none;
+    }
+
+    #test .row {
+        flex-direction: row-reverse;
+    }
+
+    .testimg img {
+        width: 100%;
+    }
+
+    .uploadP {
+        font-size: 17px !important;
+        text-align: center;
+        text-transform: capitalize;
+    }
+
+    .uploadP2 {
+        font-size: 15px !important;
+    }
+
+    #input {
+        display: none;
+    }
+
+    .container {
+        padding: 0px;
+        margin: 0px;
+
+    }
+
+    #test {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #vid {
+        width: 95%;
+    }
+
+    #preview {
+        width: 100%;
+        background-color: black;
+    }
+
+    .prev {
+        margin: auto;
+        width: 100%;
+    }
+
+    nav .container {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+
+    .nav-item {
+        padding: 0px !important;
+    }
+
+    .navbar-nav {
+        padding: 0px !important;
+        gap: 0px !important;
+    }
+
+    .nev {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+
+    }
+
+    .ic {
+        margin: 0px !important;
+    }
+
+    p,
+    a,
+    button {
+        font-size: 15px;
+    }
+
+    h3 {
+        font-size: 40px;
+    }
+    h1{
+        margin: 0px !important;
+    }
+    .startbtn {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 25px;
+    }
+
+
+    .abt {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 25px;
+    }
+
+    h4::before {
+        width: 15px;
+        height: 15px;
+        margin-left: -3px;
+    }
+
+    .result h3,
+    #home .row {
+        padding: 5px !important;
+    }
+
+    .test {
+        padding: 0px 0px !important;
+    }
+
+    #test {
+        padding: 0px !important;
+    }
+
+    .col-md-2 p {
+        font-size: 18px !important;
+    }
+
+    .mainHeading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #about .container {
+        padding: 20px !important;
+    }
+
+    #about h4 {
+        margin-left: 20px;
+    }
+
+    .diseases p {
+        font-size: 14px !important;
+    }
+}
+
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    #test .col-sm-4{
+        width: 100%;
+        margin-bottom: 60px !important;
+    }
+    #home .startbtn{
+        width: 80px !important;
+        height: 80px !important;
+    }
+    #test .p-5{
+        padding: 1.5rem !important;
+    }
+    input::placeholder{
+        font-size:13px !important ;
+    }
+    .fa-eye,.fa-eye-slash{
+        right: 12%;
+    }
+    #sign,
+    #log {
+        height: 100vh !important;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../images/BG2.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    #right,
+    #sign .side+div {
+        padding: 20px !important;
+    }
+
+    .checkbox+p {
+        font-size: 13px !important;
+    }
+
+    #log .text-muted,
+    #sign .text-muted {
+        font-size: 14px !important;
+    }
+
+    .login-btn {
+        padding: 10px !important;
+        height: 50px !important;
+        border-radius: 50rem !important;
+        font-size: 19px !important;
+    }
+
+    #log .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #isValidPassword,#isValidMail{
+        font-size: 13px !important;
+    }
+    .log {
+        font-size: 30px;
+    }
+
+    .log+p {
+        padding-bottom: 10px !important;
+    }
+
+    #sign p {
+        padding: 0px !important;
+    }
+
+    #sign .container,
+    #log .container {
+        background-color: rgb(152, 63, 152);
+        border-radius: 35px;
+        width: 100% !important;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    .mobile{
+        padding: 40px 30px 0px 30px;
+        text-align: start !important;
+        background-color: rgb(152, 63, 152);
+        color: white !important;
+    }
+    .mobile .log,.mobile .text-muted{
+        color: white ;
+        text-align: start;
+        padding: 0px !;
+    }
+    .mobile .text-muted{
+        color: rgb(239, 239, 239) !important;
+    }
+    .mobile2nd{
+        padding: 40px 30px 40px 30px;
+        background-color: white;
+        border-radius: 35px;
+
+    }
+    #log .side,
+    #sign .side {
+        display: none !important;
+    }
+
+    #log input,
+    #sign input {
+        padding: 10px 10px !important;
+        font-size: 15px !important;
+    }
+
+    .log,
+    .log+p {
+        text-align: center;
+    }
+.col-sm-6{
+    width: 100% !important;
+}
+    .log+p {
+        font-size: 17px;
+    }
+    #items p,
+    i {
+        font-size: 16px !important;
+    }
+
+
+    h1 {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    #home {
+        padding-bottom: 20px;
+    }
+
+    #home .row {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .mainHeading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .row img {
+        padding: 0px !important;
+        margin: 0px;
+        margin-top: 30px;
+        width: 70%;
+    }
+
+    .testimg {
+        width: 50%;
+    }
+
+    .testimg img {
+        width: 100%;
+    }
+
+    .uploadP {
+        font-size: 17px !important;
+        text-align: center;
+    }
+
+    .uploadP2 {
+        font-size: 15px !important;
+    }
+
+    #input {
+        display: none;
+    }
+
+    .container {
+        padding: 0px;
+        margin: 0px;
+
+    }
+
+    #test {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px !important;
+    }
+
+    #vid {
+        width: 95%;
+    }
+
+    #preview {
+        width: 100%;
+        background-color: black;
+    }
+
+    .prev {
+        margin: auto;
+        width: 100%;
+    }
+
+    .nav-item a {
+        text-align: center;
+    }
+
+    .nav-item {
+        padding: 0px !important;
+    }
+
+    .navbar-nav {
+        padding: 0px !important;
+    }
+
+    .nev {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+
+    }
+
+    nav img {
+        width: 35% !important;
+    }
+
+    .nav-item a {
+        font-size: 20px;
+    }
+
+    .ic {
+        margin: 0px !important;
+    }
+
+    p,
+    a,
+    button {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 50px;
+    }
+
+    .startbtn {
+        font-size: 30px;
+    }
+
+    .uploadP {
+        font-size: 20px !important;
+    }
+
+    .abt {
+        font-size: 25px;
+    }
+
+    h4 {
+        font-size: 30px;
+    }
+
+    h4::before {
+        width: 20px;
+        height: 20px;
+        margin-left: -10px;
+        margin-top: -2px;
+    }
+
+    #test .container {
+        width: 90% !important;
+    }
+
+    #test #disease {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #test .col-md-3 img {
+        width: 50% !important;
+    }
+
+    #symptoms,
+    #sym {
+        display: none;
+    }
+
+    #test .row {
+        flex-direction: row-reverse;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+    #items p,
+    i {
+        font-size: 18px !important;
+    }
+    .fa-eye,.fa-eye-slash{
+        right: 20%;
+        z-index: 10;
+        font-size: 15px;
+    }
+    #log h2, #sign h2{
+        font-size: 50px !important;
+        padding: 0px !important;
+        line-height: 70px !important;
+        margin: 0px !important;
+    }
+    .mobile p{
+        text-align: center;
+    }
+    #log .px-5, #sign .px-5{
+        padding-right:1.5rem !important;
+        padding-left: 1.5rem !important;
+    }
+    #log .p-5{
+        padding: 1.5rem !important;
+    }
+    #log p, #sign p{
+        scale: 0.9 !important;
+    }
+
+    h1 {
+        font-size: 80px;
+        text-align: center;
+    }
+
+    #home {
+        padding-bottom: 20px;
+    }
+
+    #home .row {
+        flex-direction: column-reverse;
+        gap: 60px;
+    }
+    #home h1{
+        font-size: 70px !important;
+    }
+    #home .startbtn{
+        width: 80px  !important;
+        height: 80px !important;
+    }
+    .row img {
+        padding: 0px !important;
+        margin: 0px;
+        padding-top: 20px;
+        width: 70%;
+    }
+
+    .testimg {
+        width: 50%;
+    }
+
+    .testimg img {
+        width: 100%;
+    }
+
+    .uploadP {
+        font-size: 17px !important;
+        text-align: center;
+    }
+
+    .uploadP2 {
+        font-size: 15px !important;
+    }
+
+    #input {
+        display: none;
+    }
+
+    .container {
+        padding: 0px;
+        margin: 0px;
+
+    }
+
+    #test {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+    }
+
+    #vid {
+        width: 95%;
+    }
+
+    #preview {
+        width: 100%;
+        background-color: black;
+    }
+
+    .prev {
+        background-color: red;
+        margin: auto;
+        width: 100%;
+    }
+
+    .nav-item a {
+        text-align: center;
+    }
+
+    .nav-item {
+        padding: 0px !important;
+    }
+
+    .navbar-nav {
+        padding: 0px !important;
+    }
+
+    .nev {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+
+    }
+
+    nav img {
+        width: 30% !important;
+    }
+
+    nav button {
+        width: 70px;
+        height: 70px;
+    }
+
+    .nav-item a {
+        font-size: 30px;
+    }
+
+    .icon {
+        font-size: 25px !important;
+    }
+
+    .ic {
+        margin: 0px !important;
+    }
+
+    p,
+    a,
+    button {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 50px;
+    }
+
+    .startbtn {
+        font-size: 40px;
+
+    }
+
+    .mainHeading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .uploadP {
+        font-size: 20px !important;
+    }
+
+    .abt {
+        font-size: 25px;
+    }
+
+    h4 {
+        font-size: 35px;
+    }
+
+    h4::before {
+        width: 20px;
+        height: 20px;
+        margin-left: -5px;
+    }
+
+    #test .container {
+        width: 90% !important;
+    }
+
+    #test #disease {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #test .col-md-3 img {
+        width: 100% !important;
+    }
+
+    #symptoms,
+    #sym {
+        display: none;
+    }
+
+    #test .row {
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    .navbar-nav {
+        gap: 1rem !important;
+    }
+
+    .history .box {
+        width: 75%;
+    }
+
+
+    h1 {
+        font-size: 80px;
+    }
+
+    .row img {
+        width: 90%;
+    }
+
+    .uploadSection {
+        width: 50%;
+    }
+
+    .abt {
+        width: 45%;
+        font-size: 25px;
+
+    }
+
+    h3 {
+        font-size: 50px;
+        font-weight: 500;
+    }
+
+    button {
+        font-size: 20px;
+    }
+
+    .nav-item a,
+    p {
+        font-size: 18px;
+    }
+
+    .test,
+    .result {
+        padding-top: 40px !important;
+    }
+
+
+    #vid {
+        width: 50%;
+    }
+}

@@ -44,11 +44,13 @@
                             class="input-group has-validation justify-content-center align-items-center flex-column gap-4">
                             <div class="w-100  wow fadeInUp" data-wow-delay="0.1s">
                                 <label class="m-0 hidden text-muted ps-1 pb-1 fs-5">Email</label>
-               
 
-                                    <input value="demo@gmail.com"  onkeyup="validateEmail(id)" onclick="reset(this,'#isValidMail')" type="text"
-                                    class="shadow-sm py-3 fs-5 form-control rounded-2 " placeholder="Email" id="email" required>
-                             
+
+                                <input value="demo@gmail.com" onkeyup="validateEmail(id)"
+                                    onclick="reset(this,'#isValidMail')" type="text"
+                                    class="shadow-sm py-3 fs-5 form-control rounded-2 " placeholder="Email" id="email"
+                                    required>
+
                                 <p id="isValidMail" class="text-center text-danger fw-medium pt-1 m-0"></p>
                             </div>
                             <div class=" w-100 wow fadeInUp" data-wow-delay="0.2s">
@@ -57,14 +59,16 @@
 
                                     <i onclick="toggleEye('password')" class="fa-solid text-muted hidden fa-eye"></i>
                                     <i onclick="toggleEye('password')" class="fa-solid text-muted fa-eye-slash"></i>
-                                    <input value="justfortesting1" onkeyup="validatePassword(id)" onclick="reset(this,'#isValidPassword')" type="password"
-                                    class=" shadow-sm form-control fs-5 py-3 rounded-2" placeholder="password" id="password" required>
+                                    <input value="justfortesting1" onkeyup="validatePassword(id)"
+                                        onclick="reset(this,'#isValidPassword')" type="password"
+                                        class=" shadow-sm form-control fs-5 py-3 rounded-2" placeholder="password"
+                                        id="password" required>
                                 </div>
                                 <p id="isValidPassword" class="text-center text-danger fw-medium p-1 m-0">
-                                   </p>
+                                </p>
                             </div>
                             <div class="d-flex wow fadeInUp w-100 justify-content-between
-                                align-items-center"data-wow-delay="0.3s">
+                                align-items-center" data-wow-delay="0.3s">
                                 <div onclick="setRememberFlag()"
                                     class="d-flex gap-1 justify-content-center align-items-center">
                                     <div class=" checkbox"></div>
@@ -96,50 +100,56 @@
                     <div class="mobile">
 
                         <p class="log m-0 wow fadeInUp" data-wow-delay="0.1s">Signup</p>
-                        <p class="text-muted welcome  wow fadeInUp pb-4" data-wow-delay="0.1s">Welcome! create your account
+                        <p class="text-muted welcome  wow fadeInUp pb-4" data-wow-delay="0.1s">Welcome! create your
+                            account
                             to start</p>
-                        </div>
-                        <div class="mobile2nd">
+                    </div>
+                    <div class="mobile2nd">
 
-                            <div class="input-group has-validation justify-content-center align-items-center flex-column gap-4">
-                                <div class="w-100  wow fadeInUp" data-wow-delay="0.2s">
-                                    <input onkeyup="validateUsername('new_username')" onclick="reset(this,'#isValidUser')" type="text"
-                                    class=" shadow-sm  py-3 fs-5 form-control rounded-2 " placeholder="username" id="new_username" required>
-                                    <p id="isValidUser" class="text-center text-danger fw-medium pt-1 m-0"></p>
+                        <div
+                            class="input-group has-validation justify-content-center align-items-center flex-column gap-4">
+                            <div class="w-100  wow fadeInUp" data-wow-delay="0.2s">
+                                <input onkeyup="validateUsername('new_username')" onclick="reset(this,'#isValidUser')"
+                                    type="text" class=" shadow-sm  py-3 fs-5 form-control rounded-2 "
+                                    placeholder="username" id="new_username" required>
+                                <p id="isValidUser" class="text-center text-danger fw-medium pt-1 m-0"></p>
                             </div>
                             <div class="w-100  wow fadeInUp" data-wow-delay="0.3s">
-                                <input onkeyup="validateEmail('new_email')" onclick="reset(this,'#isValidMail2')" type="email"
-                                class=" shadow-sm  py-3 fs-5 form-control rounded-2 " placeholder="Email" id="new_email" required>
+                                <input onkeyup="validateEmail('new_email')" onclick="reset(this,'#isValidMail2')"
+                                    type="email" class=" shadow-sm  py-3 fs-5 form-control rounded-2 "
+                                    placeholder="Email" id="new_email" required>
                                 <p id="isValidMail2" class="text-center text-danger fw-medium pt-1 m-0"></p>
-                        </div>
-                        <div class=" w-100  wow fadeInUp" data-wow-delay="0.4s">
-                             <div class="position-relative">
-                                <i onclick="toggleEye('new_password')" class="fa-solid text-muted hidden fa-eye"></i>
-                                <i onclick="toggleEye('new_password')" class="fa-solid text-muted fa-eye-slash"></i>
-                                 <input onkeyup="validatePassword('new_password')" onclick="reset(this,'#isValidPassword2')" placeholder="Password" type="password"
-                                 class=" shadow-sm form-control fs-5 py-3 rounded-2" id="new_password" required>
+                            </div>
+                            <div class=" w-100  wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="position-relative">
+                                    <i onclick="toggleEye('new_password')"
+                                        class="fa-solid text-muted hidden fa-eye"></i>
+                                    <i onclick="toggleEye('new_password')" class="fa-solid text-muted fa-eye-slash"></i>
+                                    <input onkeyup="validatePassword('new_password')"
+                                        onclick="reset(this,'#isValidPassword2')" placeholder="Password" type="password"
+                                        class=" shadow-sm form-control fs-5 py-3 rounded-2" id="new_password" required>
                                 </div>
-                                 <p id="isValidPassword2" class="text-center  text-danger  fw-medium p-1 m-0">
+                                <p id="isValidPassword2" class="text-center  text-danger  fw-medium p-1 m-0">
                                 </p>
                             </div>
                             <button data-wow-delay="0.5s" onclick="signup()"
-                            class="login-btn rounded-pill wow fadeInUp fs-4 w-100 rounded-3 fw-bold">
-                            <span id="sub2">signup</span>
-                            <span class="d-none d-flex justify-content-center fs-5 align-items-center" id="loader2"><i
-                                class="fa-solid fs-3 p-0 m-0 fa-circle-notch fa-spin"></i></span>
+                                class="login-btn rounded-pill wow fadeInUp fs-4 w-100 rounded-3 fw-bold">
+                                <span id="sub2">signup</span>
+                                <span class="d-none d-flex justify-content-center fs-5 align-items-center"
+                                    id="loader2"><i class="fa-solid fs-3 p-0 m-0 fa-circle-notch fa-spin"></i></span>
                             </button>
                             <div class="w-100  wow fadeInUp" data-wow-delay="0.5s">
-                                
-                            <p class="fs-5 text-start text-muted  m-0 ">already have an account?<span
-                                    onclick="logSign('#log','#sign')" class="sign ps-1">Login</span></p>
-                                </div>
+
+                                <p class="fs-5 text-start text-muted  m-0 ">already have an account?<span
+                                        onclick="logSign('#log','#sign')" class="sign ps-1">Login</span></p>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-   
+
     <div id="mainContainer" class="d-none">
         <div id="history" class="history hidden p-5">
             <div class="box px-0 shadow-lg rounded-3 overflow-hidden position-relative pb-3">
@@ -208,12 +218,16 @@
 
                             <li class="nav-item">
                                 <div
-                                    class="d-flex justify-content-center shadow-lg rounded-pill align-items-center logContainer ">
+                                    class="d-flex justify-content-center shadow-lg rounded-pill align-items-center logContainer">
                                     <p id="user" class="logout rounded-start-pill m-0"></p>
-                                    <p onclick="logout()"
-                                        class="logoutIcon rounded-end-pill d-flex justify-content-center align-items-center m-0">
-                                        <i title="logout" class="fa-solid fa-right-from-bracket"></i>
-                                    </p>
+                                    <div id="out" onclick="logout()"
+                                        class="d-flex overflow-hidden justify-content-center align-items-center pe-2">
+                                        <p
+                                            class="logoutIcon rounded-end-pill d-flex justify-content-center align-items-center m-0">
+                                            <i title="logout" class="fa-solid fa-right-from-bracket"></i>
+                                        </p>
+                                        <p class="logoutT m-0 text-danger">Logout</p>
+                                    </div>
                                 </div>
                             </li>
                         </ul>
@@ -226,7 +240,7 @@
                         <div class="mainHeading">
                             <h1 class="pb-3">Discover</br>your skin disease<br>with us!</h1>
                             <a href="#test" class="text-decoration-none startbtn"><i
-                                        class="fa-solid fa-arrow-right"></i></a>
+                                    class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-center align-items-end wow fadeInRight">
@@ -237,7 +251,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section class="position-relative pb-5" id="test">
             <div id="capture"
                 class="hidden position-fixed top-0 bottom-0 end-0 start-0 d-flex justify-content-center align-items-center">
@@ -250,7 +264,8 @@
                 </div>
                 <canvas id="canvas" style="display:none;"></canvas>
             </div>
-            <div id="carouselExample" data-bs-touch="false" data-wow-offset="200" class="carousel slide wow fadeInUp" data-wow-delay="0.1s">
+            <div id="carouselExample" data-bs-touch="false" data-wow-offset="200" class="carousel slide wow fadeInUp"
+                data-wow-delay="0.1s">
                 <div class="carousel-inner">
                     <div class="carousel-item active w-100  ">
                         <div class="container test w-75 m-auto ">
@@ -288,7 +303,7 @@
                                     the webcam: Permission denied!</p>
                                 <input class="d-none" type="file" name="image" id="image"
                                     accept=".png,.jpeg,.tif,.tiff,.jpg">
-                                    <div onclick="setHistoryFlag()"
+                                <div onclick="setHistoryFlag()"
                                     class="d-flex gap-1 justify-content-center align-items-center">
                                     <div id="save" class=" checkbox2"></div>
                                     <p class="m-0 fs-5 fw-medium">Save result to history</p>
@@ -331,7 +346,7 @@
                 </button>
             </div>
         </section>
-       
+
         <section id="about">
             <div class="container p-5 ">
                 <h3 class="  m-0 pb-0">About us</h3>

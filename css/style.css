@@ -44,7 +44,15 @@
 .history .box {
     width: 100%;
 }
-
+.logoutT{
+    overflow: hidden;
+    max-width: 0px;
+    transition: max-width 1s;
+}
+#out:hover .logoutT{
+    max-width: 80px;
+    cursor: pointer;
+}
 .noBorder {
     border-bottom: none !important;
 }

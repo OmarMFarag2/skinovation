@@ -38,8 +38,8 @@ function setRememberFlag() {
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
 const usernameRegex = /^[A-Za-z0-9]{4,}$/
-let emailFlag = false
-let passwordFlag = false;
+let emailFlag = true
+let passwordFlag = true;
 let usernameFlag = false;
 function validateEmail(id) {
   let input = document.getElementById(id);
@@ -550,8 +550,9 @@ function exit2() {
 
 //-----------------------------------------Login/Signup-----------------------------------------
 function resetInputs() {
-  usernameFlag = passwordFlag = emailFlag = false
-  let input = document.querySelectorAll("#log input,#sign input")
+  usernameFlag = false
+  passwordFlag = emailFlag = true
+  let input = document.querySelectorAll("#sign input")
   input = Array.from(input)
 
   console.log(input);
@@ -560,6 +561,8 @@ function resetInputs() {
     input[i].classList.remove('is-valid')
     input[i].classList.remove('is-invalid')
   }
+  document.getElementById("password").value="justfortesting1"
+  document.getElementById("email").value="demo@gmail.com"
 }
 function toggleEye(id) {
   let element = document.getElementById(id)
@@ -640,36 +643,33 @@ async function login() {
     // Check if the response is successful
     if (response.ok) {
       const result = await response.json();
-      console.log('Login successful:', result);
-      localStorage.setItem("username", result[0].username)
-      localStorage.setItem("email", result[0].email)
-      localStorage.setItem("id", result[0].id)
-      $("#user").html(result[0].username)
-      document.getElementById("log").classList.add("d-none")
-      document.getElementById("mainContainer").classList.remove("d-none")
-      new WOW().init();
-      $(".nav-link")[0].classList.add("navActive")
-      GetHistory()
-
-    } else {
-      let a = "aa"
-      const error = await response.json();
-      if (error.error.includes("email")) {
-        $('#isValidMail').html("Email not registered")
-        $("#isValidMail").removeClass("d-none")
-        $("#email").addClass("is-invalid")
+      if (!result.error) {
+        localStorage.setItem("username", result[0].username)
+        localStorage.setItem("email", result[0].email)
+        localStorage.setItem("id", result[0].id)
+        $("#user").html(result[0].username)
+        document.getElementById("log").classList.add("d-none")
+        document.getElementById("mainContainer").classList.remove("d-none")
+        new WOW().init();
+        $(".nav-link")[0].classList.add("navActive")
+        GetHistory()
       }
       else {
-        console.log(1);
-        $('#isValidPassword').html("Wrong password")
-        $("#isValidPassword").removeClass("d-none")
-        $("#password").addClass("is-invalid")
+        if (result.error.includes("email")) {
+          $('#isValidMail').html("Email not registered")
+          $("#isValidMail").removeClass("d-none")
+          $("#email").addClass("is-invalid")
+        }
+        else {
+          $('#isValidPassword').html("Wrong password")
+          $("#isValidPassword").removeClass("d-none")
+          $("#password").addClass("is-invalid")
+        }
+        // You can show an error message to the user
       }
-      // You can show an error message to the user
     }
   } catch (error) {
     console.error('An error occurred:', error);
-    // Handle network errors or other unexpected issues
   }
 }
 async function signup() {

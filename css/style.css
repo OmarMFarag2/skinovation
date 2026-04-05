@@ -44,6 +44,9 @@
 .history .box {
     width: 100%;
 }
+input[type="checkbox"] {
+  accent-color: rgb(152, 63, 152)
+}
 .logoutT{
     overflow: hidden;
     max-width: 0px;
@@ -218,7 +221,7 @@ input {
     transform: scale(0.85);
 }
 
-.checkbox:hover,.checkbox2:hover,
+.checkbox:hover,
 .checkbox+p,.checkbox2+p {
     cursor: pointer;
 }
@@ -347,7 +350,10 @@ input::placeholder{
     padding: 0px;
     color: white !important;
 }
+.disabled:hover, .disabled+p:hover {
+    cursor: not-allowed !important;
 
+}
 .diseases {
     background-color: #9162b7;
 }

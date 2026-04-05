@@ -48,7 +48,7 @@
 
                                 <input value="demo@gmail.com" onkeyup="validateEmail(id)"
                                     onclick="reset(this,'#isValidMail')" type="text"
-                                    class="shadow-sm py-3 fs-5 form-control rounded-2 " placeholder="Email" id="email"
+                                    class="is-valid shadow-sm py-3 fs-5 form-control rounded-2 " placeholder="Email" id="email"
                                     required>
 
                                 <p id="isValidMail" class="text-center text-danger fw-medium pt-1 m-0"></p>
@@ -61,7 +61,7 @@
                                     <i onclick="toggleEye('password')" class="fa-solid text-muted fa-eye-slash"></i>
                                     <input value="justfortesting1" onkeyup="validatePassword(id)"
                                         onclick="reset(this,'#isValidPassword')" type="password"
-                                        class=" shadow-sm form-control fs-5 py-3 rounded-2" placeholder="password"
+                                        class="is-valid shadow-sm form-control fs-5 py-3 rounded-2" placeholder="password"
                                         id="password" required>
                                 </div>
                                 <p id="isValidPassword" class="text-center text-danger fw-medium p-1 m-0">
@@ -303,9 +303,9 @@
                                     the webcam: Permission denied!</p>
                                 <input class="d-none" type="file" name="image" id="image"
                                     accept=".png,.jpeg,.tif,.tiff,.jpg">
-                                <div onclick="setHistoryFlag()"
+                                <div 
                                     class="d-flex gap-1 justify-content-center align-items-center">
-                                    <div id="save" class=" checkbox2"></div>
+                                    <input onclick="setHistoryFlag()" type="checkbox" id="save" class="disabled checkbox2">
                                     <p class="m-0 fs-5 fw-medium">Save result to history</p>
                                 </div>
 

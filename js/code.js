@@ -1,3 +1,4 @@
+let guest = true
 new WOW().init();
 //-----------------------------------------loading screen-----------------------------------------
 $(document).ready(function () {
@@ -18,10 +19,23 @@ if (localStorage.getItem("remember") == 'true' && localStorage.getItem('username
   document.getElementById("log").classList.add("d-none")
   document.getElementById("mainContainer").classList.remove("d-none")
   $("#user").html((localStorage.getItem("username")))
+  if (localStorage.getItem("username") == "demoUser") {
+    guest = true
+    $(".checkbox2").addClass("disabled");
+    $(".checkbox2").next().addClass("text-muted");
+    $(".checkbox2").prop("disabled", true);
+    $(".checkbox2").next().text("Save to history (unavailable for demo account)")
+  }
+  else {
+    $(".checkbox2").removeClass("disabled");
+    $(".checkbox2").next().removeClass("text-muted");
+    $(".checkbox2").prop("disabled", false);
+    $(".checkbox2").next().text("Save to history")
+    guest = false
+  }
   GetHistory()
   new WOW().init();
 }
-
 function setRememberFlag() {
   if (localStorage.getItem('remember') == 'true') {
     localStorage.setItem('remember', "false")
@@ -36,7 +50,7 @@ function setRememberFlag() {
 
 //-----------------------------input validation-----------------------------
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
+const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/;
 const usernameRegex = /^[A-Za-z0-9]{4,}$/
 let emailFlag = true
 let passwordFlag = true;
@@ -94,6 +108,7 @@ function validatePassword(id) {
 let history = [];
 let saveHistory = false;
 function setHistoryFlag() {
+
   if (saveHistory) {
 
     $(".checkbox2").css('background-color', 'white')
@@ -139,7 +154,7 @@ async function GetHistory() {
   }
 }
 async function PostHistory(result, mode) {
-  if (!saveHistory)
+  if (!saveHistory || guest)
     return
   if (mode == "cam") {
     let data = {
@@ -458,7 +473,7 @@ function printResult(result) {
 async function uploadImage() {
   $("#loader3").removeClass("d-none")
   $("#sub3").addClass("d-none")
-  if (saveHistory) {
+  if (saveHistory && !guest) {
     $("#historySpinner").removeClass("hidden")
     $("#noHist").addClass('hidden')
     $("#items").addClass('hidden')
@@ -561,8 +576,8 @@ function resetInputs() {
     input[i].classList.remove('is-valid')
     input[i].classList.remove('is-invalid')
   }
-  document.getElementById("password").value="justfortesting1"
-  document.getElementById("email").value="demo@gmail.com"
+  document.getElementById("password").value = "justfortesting1"
+  document.getElementById("email").value = "demo@gmail.com"
 }
 function toggleEye(id) {
   let element = document.getElementById(id)
@@ -589,6 +604,7 @@ function logSign(id, id2) {
 }
 function logout() {
   saveHistory = false;
+  $(".checkbox2").prop("checked", false);
   resetInputs()
   localStorage.setItem('remember', "false")
   $(".checkbox").css('background-color', 'white')
@@ -612,7 +628,7 @@ async function login() {
   if (!passwordFlag) {
     $("#password").removeClass("is-valid")
     $("#password").addClass("is-invalid")
-    $('#isValidPassword').html("password should be atleast 8 <br> characters including 1 letter and 1 number")
+    $('#isValidPassword').html("password should be atleast 6 <br> characters including 1 letter and 1 number")
   }
   if (!(emailFlag && passwordFlag))
     return
@@ -643,7 +659,9 @@ async function login() {
     // Check if the response is successful
     if (response.ok) {
       const result = await response.json();
+
       if (!result.error) {
+
         localStorage.setItem("username", result[0].username)
         localStorage.setItem("email", result[0].email)
         localStorage.setItem("id", result[0].id)
@@ -651,8 +669,22 @@ async function login() {
         document.getElementById("log").classList.add("d-none")
         document.getElementById("mainContainer").classList.remove("d-none")
         new WOW().init();
-        $(".nav-link")[0].classList.add("navActive")
         GetHistory()
+        $(".nav-link")[0].classList.add("navActive")
+        if (result[0].username == "demoUser") {
+          guest = true
+          $(".checkbox2").addClass("disabled");
+          $(".checkbox2").next().addClass("text-muted");
+          $(".checkbox2").prop("disabled", true);
+          $(".checkbox2").next().text("Save to history (unavailable for demo account)")
+        }
+        else {
+          $(".checkbox2").removeClass("disabled");
+          $(".checkbox2").next().removeClass("text-muted");
+          $(".checkbox2").prop("disabled", false);
+          $(".checkbox2").next().text("Save to history")
+          guest = false
+        }
       }
       else {
         if (result.error.includes("email")) {
@@ -681,7 +713,7 @@ async function signup() {
   if (!passwordFlag) {
     $("#new_password").removeClass("is-valid")
     $("#new_password").addClass("is-invalid")
-    $('#isValidPassword2').html("password should be atleast 8 <br> characters including 1 letter and 1 number")
+    $('#isValidPassword2').html("password should be atleast 6 <br> characters including 1 letter and 1 number")
   }
   if (!usernameFlag) {
     $("#new_username").removeClass("is-valid")
